@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- <script>
+    function counter(n) {
+      const interval = setInterval(() => {
+        console.log(n);
+        if (n === 0) {
+            clearInterval(interval);
+        }
+        n -= 1;
+    }, 1000);
+}
+
+    counter(10);
+    </script> -->
+
+    <!-- <script>
+      function createCounter(n) {
+        let count = n;
+        let intervalId;
+
+        return {
+          start() {
+            intervalId = setInterval(() => {
+              console.log(count);
+              count -= 1;
+            }, 1000);
+          },
+          pause() {
+            clearInterval(intervalId);
+          },
+          stop() {
+            clearInterval(intervalId);
+            count = 0;
+          },
+        };
+      }
+
+      const counter = createCounter(5);
+      counter.start();
+    </script> -->
+
+    <!-- <script>
+      function delay(n) {
+        if (n >= 0) {
+          console.log(n);
+          setTimeout(() => {
+            delay(n - 1);
+          }, 1000);
+        }
+      }
+
+      delay(10);
+    </script> -->
+
+    <script>
+      class HttpError extends Error {
+  constructor(response) {
+    super(`${response.status} for ${response.url}`);
+    this.name = 'HttpError';
+    this.response = response;
+  }
+}
+
+async function loadJson(url) {
+  const response = await fetch(url);
+  if (response.status === 200) {
+    return response.json();
+  } else {
+    throw new HttpError(response);
+  }
+}
+
+async function getGithubUser() {
+  let name;
+  do {
+    name = prompt("Введите логин?", "iliakan");
+    try {
+      const user = await loadJson(`https://api.github.com/users/${name}`);
+      alert(`Полное имя: ${user.name}.`);
+      return user;
+    } catch (err) {
+      if (err instanceof HttpError && err.response.status === 404) {
+        alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+      } else {
+        throw err;
+      }
+    }
+  } while (true);
+}
+
+getGithubUser();
+    </script>
+  </body>
+</html>

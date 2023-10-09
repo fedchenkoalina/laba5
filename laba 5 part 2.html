@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <!-- <script>
+  const arr = [1, 6, -1, 22, 13];
+
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+
+  console.log("Максимум:", max);
+  console.log("Минимум:", min);
+</script> -->
+
+
+
+<!-- <script>
+  const str = "!тевирП";
+  const reverse = str.split('').reverse().join('');
+  console.log(reverse);
+</script> -->
+
+
+<!-- <script>
+
+function anagram(str1,str2)
+{
+    let n1 = str1.length;
+    let n2 = str2.length;
+
+    if (n1 != n2)
+        return false;
+
+    str1.sort();
+    str2.sort()
+
+    for (let i = 0; i < n1; i++)
+        if (str1[i] != str2[i])
+            return false;
+
+    return true;
+}
+
+let str1=['л', 'у', 'н', 'ь'];
+let str2=['н', 'о', 'л', 'ь'];
+
+if (anagram(str1, str2))
+    console.log( "Эти две строки являются анаграммой друг друга");
+else
+    console.log("Эти две строки не являются анаграммой друг друга");
+</script> -->
+
+<!-- <script>
+  function palindrome() {
+              let result = prompt("Введите значение");
+              let stringArr = result.split("").reverse().join("");
+
+              if (stringArr == result) {
+                  alert("Данное значение является палиндромом");
+              } else {
+                  alert("Данное значение не является палиндромом");
+              }
+          }
+          palindrome();
+</script> -->
+<style >
+  .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        </style>>
+           <button class="button" id="incrementButton">+</button>
+           <span id="value">0</span>
+           <button class="button" id="decrementButton">-</button>
+
+           <script>
+               // Get the increment and decrement buttons
+               var incrementButton = document.getElementById("incrementButton");
+               var decrementButton = document.getElementById("decrementButton");
+
+               // Get the value span element to display the value
+               var valueElement = document.getElementById("value");
+
+               // Set the initial value
+               var value = 0;
+               valueElement.innerText = value;
+
+               // Add event listeners for the buttons
+               incrementButton.addEventListener("click", function() {
+                   value++;
+                   valueElement.innerText = value;
+               });
+
+               decrementButton.addEventListener("click", function() {
+                   value--;
+                   valueElement.innerText = value;
+               });
+
+               </script>>
+  </body>
+</html>
